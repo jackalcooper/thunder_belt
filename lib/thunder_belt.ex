@@ -23,14 +23,3 @@ defmodule ThunderBelt do
         Repo.all(AccelerateTask)
     end
 end
-
-defmodule AccelerateTask do
-  use Ecto.Model
-  @primary_key {:AccelerateTaskId, :integer, []}
-  schema "AccelerateTaskMap151297778_superspeed_1_1" do
-    # field :AccelerateTaskId, :integer
-    field :LocalTaskId, :integer
-    field :LocalSubFileIndex, :integer
-    field :UserData,  :binary
-  end
-end
