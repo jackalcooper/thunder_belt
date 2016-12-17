@@ -1,6 +1,7 @@
 # This file is responsible for configuring your application
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
+
 config :thunder_belt, ThunderBelt.Repo,
   adapter: Sqlite.Ecto,
   database: "/Users/jackalcooper/Downloads/TaskDb.dat"

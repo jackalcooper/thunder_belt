@@ -7,9 +7,15 @@ defmodule ThunderBelt do
 
     alias ThunderBelt.Repo
     import Ecto.Query
-    @db_file_path "/Users/jackalcooper/Downloads/TaskDb.dat"
+    
     def sample_query do
-        query = from w in AccelerateTask
+        query = from a in AccelerateTask, 
+        select: {
+            a."AccelerateTaskId", 
+            a."LocalTaskId",
+            a."LocalSubFileIndex",
+            a."UserData"
+        }
         Repo.all(query)
     end
 end
