@@ -13,7 +13,6 @@ defmodule AccelerateTask do
   def changeset(task, params \\ :empty) do
     task
     |> cast(params, [], ~w(UserData))
-    |> IO.inspect
   end
 end
 

@@ -3,7 +3,7 @@ defmodule ThunderBeltTest do
   doctest ThunderBelt
 
   test "the truth" do
-    ThunderBelt.q |> List.last |> ThunderBelt.update_record
+    ThunderBelt.q |> Enum.map(&ThunderBelt.update_record/1)
     assert 1 + 1 == 2
   end
 
