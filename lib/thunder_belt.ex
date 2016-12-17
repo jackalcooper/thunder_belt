@@ -1,6 +1,5 @@
 defmodule ThunderBelt do
     use Application
-
     def start(_type, _args) do
         ThunderBelt.Supervisor.start_link
     end
@@ -21,5 +20,11 @@ defmodule ThunderBelt do
 
     def q do
         Repo.all(AccelerateTask)
+    end
+
+    def update_record(accelerate_task) do
+        user_data_new = accelerate_task."UserData"
+        changeset = AccelerateTask.changeset(accelerate_task, %{"UserData": user_data_new})
+        |> IO.inspect
     end
 end
