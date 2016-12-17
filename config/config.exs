@@ -2,9 +2,16 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+
+db_path = case :os.type do
+  {:unix, :darwin} ->
+    "/Users/jackalcooper/Downloads/TaskDb.dat"
+  {:win32, :nt} ->
+    "C:\\Program Files (x86)\\Thunder Network\\Thunder\\Profiles\\TaskDb.dat"
+end
 config :thunder_belt, ThunderBelt.Repo,
   adapter: Sqlite.Ecto,
-  database: "/Users/jackalcooper/Downloads/TaskDb.dat"
+  database: db_path
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
