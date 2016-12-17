@@ -7,7 +7,7 @@ defmodule AccelerateTask do
     # field :AccelerateTaskId, :integer
     field :AccelerateTaskId, :integer
     field :LocalSubFileIndex, :integer
-    embeds_one :UserData, UserData, [on_replace: :delete]
+    field :UserData, :string
   end
   
   def changeset(task, params \\ :empty) do
